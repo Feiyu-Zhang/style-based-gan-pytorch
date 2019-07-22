@@ -253,7 +253,7 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='Progressive Growing of GANs')
 
-    parser.add_argument('path', type=str, help='path of specified dataset')
+    parser.add_argument('--path', type=str, help='path of specified dataset')
     parser.add_argument(
         '--n_gpu', type=int, default=4, help='number of gpu used for training'
     )
