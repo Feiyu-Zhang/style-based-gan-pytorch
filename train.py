@@ -287,10 +287,13 @@ if __name__ == '__main__':
     )
 
     args = parser.parse_args()
-
-    generator = nn.DataParallel(StyledGenerator(code_size)).cuda()
+    # zfy
+    generator = nn.DataParallel(StyledGenerator_image(code_size)).cuda()
     discriminator = nn.DataParallel(Discriminator()).cuda()
-    g_running = StyledGenerator(code_size).cuda()
+
+    # g_running = StyledGenerator(code_size).cuda()
+    g_running = StyledGenerator_image(code_size).cuda()
+    # zfy
     g_running.train(False)
 
     class_loss = nn.CrossEntropyLoss()
